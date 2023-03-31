@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> School WEb Page</title>
     <link rel=" stylesheet"href="style.css">
+    <style>
+        #div1{
+            Width: 350px; height: 70px;
+            padding:10px; border: 8px solid #ff00}
+        
+    </style>
    
 
 </style><style>
@@ -14,7 +20,19 @@
 margin-left: 15px;
 float:right ; font-size: italic; background-color: lightgrey
 }
-</style>
+</style><script> 
+    function allowDrop(ev)
+    { ev.prevent Default();
+    }
+    funtion drag(ev){
+        ev.dataTransfer.setData("text",ev.target.id);
+    }
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementbyid(data));
+    }
+    </script>
 </head>
 <body>
 <header><h1> Mehak School</h1><nav><ul>
@@ -36,7 +54,7 @@ float:right ; font-size: italic; background-color: lightgrey
         <li> <b><em><u>Elementary Classes</u></em></b></li><dl> Classes</dl><dd> 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, 4<sup>th</sup></dd>
         <li><b><u>MIddle School</u></b></li><dl>Classes</dl><dd>5<sup>th</sup>, 6<sup>th</sup>, 7<sup>th</sup>, 8<sup>th</sup></dd>
         <li> <b><u>High school</u></b></li><dl> Classes</dl><dd> 9<sup>th</sup>, 10<sup>th</sup></dd>
-    </ul></section><aside><h2><u> Note</u></h2><p> admission open from 1<sub>st</sub> March. Discount will provided to first 2o <sub>th</sub> students</p></aside>
+    </ul></section><aside><h2><u> Note</u></h2><p> admission open from 1<sup>st</sup> March. Discount will provided to first 2o <sub>th</sub> students</p></aside>
 <section id="Admission"><h2>Admission</h2> <p> If you are intersted in enrolling your child in our institute. please visit our admission page for more information.</p>
 <a href="//http.wwww.beaconhouse.net">learn m.ore </a> <br><br><a href="/html/default.asp"> click here</a>
 </section>
@@ -51,7 +69,22 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></main>
 <input type="text" id="fname" name="fname">
 <label for ="lname"> last name</label>
 <input type="text" id="lname" name="lname">
-</form> <br>
+</form> <br><p> IN which category you want to get enrolled.</p><br>
+<form> <form actio="/action_page.php">
+    <input type="radio" id ="Kinndergarten" name="Classes" vale="Kinndergarten">
+    <label for="Kinndergarten"> Kinndergarten</label>
+    <input type="radio" id="Elementary Classes" name="Classes" value="Elementary Classes">
+    <label for="Elementary Classes">Elementary Classes</label>
+    <input type="radio" id="MIddle Classes"  name="Classes" value="MIddle Classes">
+        <label for="Middle Classes"> Middle classes</label>
+    <input type="radio" id="High classes"name="classes" value="High classes">
+    <label for="High classes"> High Classes</label>
+
+</form><br><style> p{color:red}</style><p></p>Drag the words in the box to prove that you are not robot</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="images.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
 <ul> 
 <li> Address<address> 552 A1 Township lahore</address></li>
 <li> Phone Number <address> <br> 04235155666</address></li>
