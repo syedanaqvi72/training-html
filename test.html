@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> School WEb Page</title>
     <link rel=" stylesheet"href="style.css">
+    <style>
+        #div1{
+            Width: 350px; height: 70px;
+            padding:10px; border: 8px solid #ff00}
+        
+    </style>
    
 
 </style><style>
@@ -62,7 +68,21 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></main><footer>
     <input type="radio" id="High classes"name="classes" value="High classes">
     <label for="High classes"> High Classes</label>
 
-</form>
+</form><br><p> Drag the words in the box to prove that you are not robot</p>
+<script> 
+function allowDrop(ev)
+{ ev.prevent Default();
+}
+funtion drag(ev){
+    ev.dataTransfer.setData("text",ev.target.id);
+}
+function drop(ev){
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementbyid(data));
+}
+</script>
+
 <ul> 
 <li> Address<address> 552 A1 Township lahore</address></li>
 <li> Phone Number <address> <br> 04235155666</address></li>
